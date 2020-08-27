@@ -1,5 +1,6 @@
 from flask import Flask,render_template,request
-from mySql import select_admin
+
+from my_flask.data_select_user import select_admin
 
 app = Flask(__name__)
 
@@ -22,7 +23,7 @@ def login():
             return '账号或密码不正确'
 
     if request.method == 'GET':
-        return 'GET'
+        return render_template('login.html')
 
 
 if __name__ == '__main__':
